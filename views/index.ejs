@@ -1,0 +1,36 @@
+<html>
+<head> 
+<title> Daily Checklist App </title>
+ <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+ <link href="/styles.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+<h1> DAILY CHECKLIST APP </h1>
+
+<form action ="/addtask" method="POST">
+
+<input type="text" name="newtask" placeholder="add new task">
+<button> ADD TASK  </button>
+
+
+<h1> PENDING TASK LIST </h1>
+
+<% for( var i = 0; i < task.length; i++){ %>
+    <li><input type="checkbox" name="check" value="<%= task[i] %>" /> <%= task[i] %> </li>
+<% } %>
+
+<button formaction="/removetask" type="submit" id="top"> TASK DONE </button>
+</form>
+
+<h1> TASK ACCOMPLISHED </h1>
+
+ <% for(var i = 0; i < complete.length; i++){ %>
+    <li><input type="checkbox" checked><%= complete[i] %> </li>
+<% } %>
+
+</div>
+
+</body>
+</html>
